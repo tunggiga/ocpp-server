@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>OCPP Server</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <h1>OCPP Server</h1>
+    <div class="myForm" data-action="remote_start_transaction">
+        <details>
+            <summary>Remote Start Transaction</summary>
+            <div>
+                <p>
+                    <label for="clientId">Client ID</label>
+                    <input type="text" id="clientId" name="clientId" value="" class="myFormInput" />
+                </p>
+                <p>
+                    <label for="idTag">Id Tag</label>
+                    <input type="text" id="idTag" name="idTag" value="" class="myFormInput" />
+                </p>
+                <p>
+                    <label for="transactionId">Transaction ID</label>
+                    <input type="number" id="transactionId" name="transactionId" value="" class="myFormInput" />
+                </p>
+                <button class="myFormSubmit">Submit</button>
+                <div>
+                    <article>
+                        <code class="myFormResult" style="display: none;"></code>
+                    </article>
+                </div>
+            </div>
+        </details>
+    </div>
+    <div class="myForm" data-action="remote_stop_transaction">
+        <details>
+            <summary>Remote Stop Transaction</summary>
+            <div>
+                <p>
+                    <label for="clientId">Client ID</label>
+                    <input type="text" id="clientId" name="clientId" value="" class="myFormInput" />
+                </p>
+                <p>
+                    <label for="transactionId">Transaction ID</label>
+                    <input type="number" id="transactionId" name="transactionId" value="" class="myFormInput" />
+                </p>
+                <button class="myFormSubmit">Submit</button>
+                <div>
+                    <article>
+                        <code class="myFormResult" style="display: none;"></code>
+                    </article>
+                </div>
+            </div>
+        </details>
+    </div>
+    <div class="myForm" data-action="reset">
+        <details>
+            <summary>Reset</summary>
+            <div>
+                <p>
+                    <label for="clientId">Client ID</label>
+                    <input type="text" id="clientId" name="clientId" value="" class="myFormInput" />
+                </p>
+                <p>
+                    <label for="resetType">Reset Type</label>
+                    <select id="resetType" name="resetType" value="" class="myFormInput">
+                        <option value="Hard">Hard</option>
+                        <option value="Soft">Soft</option>
+                        <option value="Accepted">Accepted</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </p>
+                <button class="myFormSubmit">Submit</button>
+                <div>
+                    <article>
+                        <code class="myFormResult" style="display: none;"></code>
+                    </article>
+                </div>
+            </div>
+        </details>
+    </div>
+</body>
+
+</html>
