@@ -56,6 +56,7 @@ func main() {
 				ClientId      string `json:"clientId"`
 				IdTag         string `json:"idTag"`
 				TransactionId int    `json:"transactionId"`
+				ConnectorId   int    `json:"connectorId"`
 			}{}
 			if err := c.Bind(&params); err != nil {
 				return err
@@ -71,7 +72,9 @@ func main() {
 				} else {
 					resultChan <- result
 				}
-			}, params.IdTag)
+			}, params.IdTag, func(request *core.RemoteStartTransactionRequest) {
+				request.ConnectorId = &params.ConnectorId
+			})
 			if err != nil {
 				return err
 			}
